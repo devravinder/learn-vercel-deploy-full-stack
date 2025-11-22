@@ -4,16 +4,17 @@
   "outputDirectory": "dist",
   "devCommand": "pnpm run dev",
   "installCommand": "pnpm install",
+  "framework":"elysia",
   "builds": [
     {
-      "src": "dist/index.js",
+      "src": "*.js",
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "dist/index.js"
+      "source": "/(.*)",
+      "destination": "/index.js"
     }
   ]
 }
