@@ -4,5 +4,9 @@
   "outputDirectory": "dist",
   "devCommand": "pnpm run dev",
   "installCommand": "pnpm install",
-  "framework":"elysia"
+  "framework":"elysia",
+  "routes": [
+    { "src": "/api(.*)", "dest": "/dist/index.js" },
+    { "src": "/(.*)", "dest": "/dist/index.js" }
+  ]
 }
