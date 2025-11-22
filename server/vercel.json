@@ -5,8 +5,9 @@
   "devCommand": "pnpm run dev",
   "installCommand": "pnpm install",
   "framework":"elysia",
-  "routes": [
-    { "src": "/api(.*)", "dest": "/dist/index.js" },
-    { "src": "/(.*)", "dest": "/dist/index.js" }
+ "rewrites": [
+    { "source": "/", "destination": "/api" },
+    { "source": "/api/(.*)", "destination": "/index.js" },
+    { "source": "/(.*)",      "destination": "/index.js" }
   ]
 }
