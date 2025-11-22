@@ -2,17 +2,18 @@ import { Elysia } from "elysia";
 import { cors } from "@elysiajs/cors";
 import { node } from "@elysiajs/node";
 import { openapi } from "@elysiajs/openapi";
-import router from './router.js'
+import router from "./router.js";
 
 const setup = () => {
   const app = new Elysia({ adapter: node() });
   app
-    .use(cors())  
+    .get("/", () => "Hello World")
+    .use(cors())
     .use(openapi())
-    .use(router)
+    .use(router);
 
-  return app
+  return app;
 };
 
-export const app = setup()
-export default app
+export const app = setup();
+export default app;
